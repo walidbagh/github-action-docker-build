@@ -66,6 +66,8 @@ runs:
           push: true
           tags: ${{ inputs.tags }}
           target: ${{ inputs.target }}
+          cache-from: type=registry,ref=${{ github.repository }}:buildcache
+          cache-to: type=registry,ref=${{ github.repository }}:buildcache,mode=max
 branding:
   icon: 'server'
   color: 'blue'
